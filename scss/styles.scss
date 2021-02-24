@@ -63,6 +63,10 @@ $max-width: 1280 - 19 * 2 + px;
     list-style: none;
     margin: 0;
     padding: 0;
+
+    @media screen and (max-width: 541px) {
+      display: none;
+    }
   }
 
   &__item {
@@ -191,7 +195,7 @@ $max-width: 1280 - 19 * 2 + px;
 
     @media screen and (max-width: 541px) {
       order: 1;
-      margin: 20px 0 0 auto;
+      margin: 20px 0 10px auto;
       padding-right: 16px;
     }
   }
