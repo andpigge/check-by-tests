@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Проверка тестами</title>
+  <link rel="stylesheet" href="./pages/index.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="page">
+  <header class="header page__header page__position-center">
+    <a href="#" class="header__link">
+      <p class="header__icon-text">
+        Проверка тестами
+      </p>
+    </a>
+    <!-- /.header__link -->
+    <ul class="header__list">
+      <li class="header__item">
+        <button class="header__button" type="button">Создать тест</button>
+      </li>
+      <!-- /.header__item -->
+      <li class="header__item">
+        <button class="header__button" type="button">Создать вопросы</button>
+      </li>
+      <!-- /.header__item -->
+    </ul>
+    <!-- /.header__list -->
+  </header>
+  <!-- /.header -->
+  <main class="content">
+    <section class="create-test">
+      <form class="create-test__form" name="create-test" method="POST">
+        <h2 class="create-test__form-title">Заполните тест</h2>
+        <input type="text" class="create-test__input-text" name="test__title" placeholder="Название теста...">
+        <textarea class="create-test__input-textarea" name="test__desc" placeholder="Опишите свой тест..."></textarea>
+        <button type="submit" class="create-test__save-sb">
+          Создать
+        </button>
+      </form>
+      <!-- /.create-test__form -->
+    </section>
+    <!-- /.create-test -->
+    <section class="tests">
+      <ul class="tests__list">
+        <li class="tests__item">
+          <div class="card-test">
+            <div class="card-test__container-text">
+              <h2 class="card-test__title">
+                Название теста
+              </h2>
+              <p class="card-test__desc">
+                Напишите описание текста
+              </p>
+            </div>
+            <!-- /.card-test__container-text -->
+            <ul class="card-test__list">
+              <li class="card-test__item">
+                <button class="card-test__edit-btn"></button>
+              </li>
+              <!-- /.card-test__item -->
+              <li class="card-test__item">
+                <button class="card-test__delete-btn"></button>
+              </li>
+              <!-- /.card-test__item -->
+            </ul>
+            <!-- /.card-test__list -->
+          </div>
+          <!-- /.card-test -->
+        </li>
+        <!-- /.tests__item -->
+      </ul>
+      <!-- /.tests__list -->
+    </section>
+    <!-- /.tests -->
+  </main>
+  <!-- /.content -->
+
+<script src="./javascript/script.js"></script>
+</body>
+</html>

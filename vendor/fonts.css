@@ -1,0 +1,48 @@
+@font-face {
+  src:
+  url(../fonts/MarckScript-Regular.ttf) format(truetype);
+  font-family: 'Marck Script';
+  font-weight: 400;
+}
+
+@font-face {
+  src:
+    url(../fonts/PlayfairDisplay-Regular.ttf) format(truetype);
+    font-family: 'Playfair Display';
+    font-weight: 400;
+}
+
+@font-face {
+  src:
+    url(../fonts/PlayfairDisplay-Medium.ttf) format(truetype);
+    font-family: 'Playfair Display';
+    font-weight: 500;
+}
+
+@font-face {
+  src:
+    url(../fonts/PlayfairDisplay-SemiBold.ttf) format(truetype);
+    font-family: 'Playfair Display';
+    font-weight: 600;
+}
+
+@font-face {
+  src:
+    url(../fonts/PlayfairDisplay-Bold.ttf) format(truetype);
+    font-family: 'Playfair Display';
+    font-weight: 700;
+}
+
+@font-face {
+  src:
+    url(../fonts/PlayfairDisplay-ExtraBold.ttf) format(truetype);
+    font-family: 'Playfair Display';
+    font-weight: 800;
+}
+
+@font-face {
+  src:
+    url(../fonts/PlayfairDisplay-Black.ttf) format(truetype);
+    font-family: 'Playfair Display';
+    font-weight: 900;
+}

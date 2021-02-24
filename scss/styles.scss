@@ -1,0 +1,285 @@
+/* sass --watch scss/styles.scss styles/styles.css */
+
+$font-main-color: #032D3D;
+$light-gray-blue: #89BBD2;
+$pang-color: #C9E6F4;
+$font-family-main: 'Playfair Display', serif;
+$font-family-icon: 'Marck Script', cursive;
+$max-width: 1280 - 19 * 2 + px;
+
+@mixin font-main {
+  color: $font-main-color;
+  font-family: 'Playfair Display', serif;
+}
+
+@mixin button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@mixin background-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.page {
+  display: block;
+
+  &__position-center {
+    margin: 0 auto;
+  }
+
+  &__header {
+    margin-bottom: 40px;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px 40px 30px 40px;
+  max-width: $max-width;
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__icon-text {
+    display: inline;
+    margin: 0;
+    font-family: 'Marck Script', cursive;
+    font-size: 28px;
+    line-height: 21px;
+    color: $font-main-color;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-right: 20px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  &__button {
+    @include button;
+    @include font-main;
+    border-radius: 5px;
+    height: 50px;
+    max-width: 200px;
+    padding: 0 20px;
+    border: 1px solid $light-gray-blue;
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: minmax(320px, 596px) minmax(320px, 594px);
+  column-gap: 90px;
+  justify-content: center;
+  grid-auto-flow: row;
+
+  @media screen and (max-width: 1281px) {
+    column-gap: 40px;
+    grid-template-columns: minmax(320px, 420px) minmax(320px, 594px);
+  }
+
+  @media screen and (max-width: 1025px) {
+    column-gap: 0;
+    grid-template-columns: minmax(320px, 554px);
+  }
+}
+
+.tests {
+  padding-right: 40px;
+
+  @media screen and (max-width: 1025px) {
+    padding: 0;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.card-test {
+  display: flex;
+  background-color: $pang-color;
+  border-radius: 5px;
+
+  &__container-text {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 26px;
+  }
+
+  &__title {
+    @include font-main;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    margin: 50px 0 40px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &__desc {
+    @include font-main;
+    margin: 0;
+    font-size: 20px;
+    line-height: 22px;
+    margin-bottom: 38px;
+    max-width: 360px;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 50px;
+    margin-right: 26px
+  }
+
+  &__item {
+    margin-right: 20px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  &__edit-btn {
+    @include background-button;
+    width: 32px;
+    height: 32px;
+    background-image: url(../images/icons/card-test-edit.svg);
+    background-size: 15px 15px;
+    border-radius: 50%;
+    background-color: $light-gray-blue;
+    border: 1px solid white;
+  }
+
+  &__delete-btn {
+    @include background-button;
+    width: 32px;
+    height: 32px;
+    background-image: url(../images/icons/card-test-delete.svg);
+    background-size: 15px 15px;
+    border-radius: 5px;
+    border: 2px solid #89BBD2;
+  }
+}
+
+.create-test {
+  padding-left: 40px;
+
+  @media screen and (max-width: 1025px) {
+    padding: 0;
+    margin-bottom: 60px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__form-title {
+    margin: 0;
+    font-family: $font-family-main;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 700;
+    color: rgba($font-main-color, $alpha: .8);
+    margin-bottom: 10px;
+    margin-left: 15px;
+  }
+
+  &__input-text {
+    padding: 0 15px 5px;
+    height: 34px;
+    border: none;
+    margin-bottom: 25px;
+    font-family: $font-family-main;
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: 400;
+    border-radius: 2px;
+    background-color: rgba($pang-color, $alpha: .4);
+    color: rgba($font-main-color, $alpha: .4);
+
+    &:focus {
+      background-color: transparent;
+      color: rgba($font-main-color, $alpha: 1);
+    }
+
+    &::placeholder {
+      color: rgba($font-main-color, $alpha: .3);
+      font-weight: 600;
+    }
+  }
+
+  &__input-textarea {
+    box-sizing: border-box;
+    resize: none;
+    height: 125px;
+    border: none;
+    background-color: rgba($pang-color, $alpha: .4);
+    color: rgba($font-main-color, $alpha: .4);
+    padding: 10px 15px;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    border-radius: 2px;
+
+    &:focus {
+      background-color: transparent;
+      color: rgba($font-main-color, $alpha: 1);
+    }
+
+    &::placeholder {
+      color: rgba($font-main-color, $alpha: .3);
+      font-weight: 500;
+    }
+  }
+
+  &__save-sb {
+    height: 48px;
+    border: 1px solid $pang-color;
+    border-radius: 2px;
+    font-family: $font-family-main;
+    font-weight: 600;
+    font-size: 18px;
+    color: white;
+    background-color: $light-gray-blue;
+    padding: 0 34px;
+    width: 200px;
+    cursor: pointer;
+  }
+}
