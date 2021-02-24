@@ -96,13 +96,28 @@
 
 .card-test {
   display: flex;
+  justify-content: space-between;
   background-color: #C9E6F4;
   border-radius: 5px;
 }
+@media screen and (max-width: 541px) {
+  .card-test {
+    flex-direction: column;
+  }
+}
 .card-test__container-text {
-  width: 100%;
-  max-width: 380px;
-  margin: 0 26px;
+  padding: 0 26px;
+  max-width: 390px;
+}
+@media screen and (max-width: 541px) {
+  .card-test__container-text {
+    order: 2;
+  }
+}
+@media screen and (max-width: 432px) {
+  .card-test__container-text {
+    padding: 0 16px;
+  }
 }
 .card-test__title {
   color: #032D3D;
@@ -115,6 +130,17 @@
   white-space: nowrap;
   overflow: hidden;
 }
+@media screen and (max-width: 541px) {
+  .card-test__title {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 541px) {
+  .card-test__title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
 .card-test__desc {
   color: #032D3D;
   font-family: "Playfair Display", serif;
@@ -122,15 +148,26 @@
   font-size: 20px;
   line-height: 22px;
   margin-bottom: 38px;
-  max-width: 360px;
+}
+@media screen and (max-width: 541px) {
+  .card-test__desc {
+    font-size: 18px;
+    line-height: 22px;
+  }
 }
 .card-test__list {
   display: flex;
   list-style: none;
   padding: 0;
-  margin: 0;
   margin-top: 50px;
-  margin-right: 26px;
+  padding-right: 26px;
+}
+@media screen and (max-width: 541px) {
+  .card-test__list {
+    order: 1;
+    margin: 20px 0 0 auto;
+    padding-right: 16px;
+  }
 }
 .card-test__item {
   margin-right: 20px;
@@ -173,6 +210,7 @@
   .create-test {
     padding: 0;
     margin-bottom: 60px;
+    padding: 0 16px;
   }
 }
 .create-test__form {
@@ -189,6 +227,12 @@
   margin-bottom: 10px;
   margin-left: 15px;
 }
+@media screen and (max-width: 432px) {
+  .create-test__form-title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
 .create-test__input-text {
   padding: 0 15px 5px;
   height: 34px;
@@ -201,6 +245,12 @@
   border-radius: 2px;
   background-color: rgba(201, 230, 244, 0.4);
   color: rgba(3, 45, 61, 0.4);
+}
+@media screen and (max-width: 432px) {
+  .create-test__input-text {
+    font-size: 20px;
+    line-height: 22px;
+  }
 }
 .create-test__input-text:focus {
   background-color: transparent;

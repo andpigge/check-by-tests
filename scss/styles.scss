@@ -128,13 +128,25 @@ $max-width: 1280 - 19 * 2 + px;
 
 .card-test {
   display: flex;
+  justify-content: space-between;
   background-color: $pang-color;
   border-radius: 5px;
 
+  @media screen and (max-width: 541px) {
+    flex-direction: column;
+  }
+
   &__container-text {
-    width: 100%;
-    max-width: 380px;
-    margin: 0 26px;
+    padding: 0 26px;
+    max-width: 390px;
+
+    @media screen and (max-width: 541px) {
+      order: 2;
+    }
+
+    @media screen and (max-width: 432px) {
+      padding: 0 16px;
+    }
   }
 
   &__title {
@@ -146,6 +158,15 @@ $max-width: 1280 - 19 * 2 + px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+
+    @media screen and (max-width: 541px) {
+      margin-top: 0;
+    }
+
+    @media screen and (max-width: 541px) {
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
 
   &__desc {
@@ -154,16 +175,25 @@ $max-width: 1280 - 19 * 2 + px;
     font-size: 20px;
     line-height: 22px;
     margin-bottom: 38px;
-    max-width: 360px;
+
+    @media screen and (max-width: 541px) {
+      font-size: 18px;
+      line-height: 22px;
+    }
   }
 
   &__list {
     display: flex;
     list-style: none;
     padding: 0;
-    margin: 0;
     margin-top: 50px;
-    margin-right: 26px
+    padding-right: 26px;
+
+    @media screen and (max-width: 541px) {
+      order: 1;
+      margin: 20px 0 0 auto;
+      padding-right: 16px;
+    }
   }
 
   &__item {
@@ -202,6 +232,7 @@ $max-width: 1280 - 19 * 2 + px;
   @media screen and (max-width: 1025px) {
     padding: 0;
     margin-bottom: 60px;
+    padding: 0 16px;
   }
 
   &__form {
@@ -218,6 +249,11 @@ $max-width: 1280 - 19 * 2 + px;
     color: rgba($font-main-color, $alpha: .8);
     margin-bottom: 10px;
     margin-left: 15px;
+
+    @media screen and (max-width: 432px) {
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
 
   &__input-text {
@@ -232,6 +268,11 @@ $max-width: 1280 - 19 * 2 + px;
     border-radius: 2px;
     background-color: rgba($pang-color, $alpha: .4);
     color: rgba($font-main-color, $alpha: .4);
+
+    @media screen and (max-width: 432px) {
+      font-size: 20px;
+      line-height: 22px;
+    }
 
     &:focus {
       background-color: transparent;
