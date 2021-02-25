@@ -5,7 +5,7 @@ $light-gray-blue: #89BBD2;
 $pang-color: #C9E6F4;
 $font-family-main: 'Playfair Display', serif;
 $font-family-icon: 'Marck Script', cursive;
-$max-width: 1280 - 19 * 2 + px;
+$max-width: 1280px;
 
 @mixin font-main {
   color: $font-main-color;
@@ -39,14 +39,33 @@ $max-width: 1280 - 19 * 2 + px;
 }
 
 .header {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 35px 40px 30px 40px;
   max-width: $max-width;
 
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  @media screen and (max-width: 400px) {
+    align-items: center;
+  }
+
   &__link {
     text-decoration: none;
+
+    @media screen and (max-width: 721px) {
+      margin-bottom: 10px;
+      margin-right: auto;
+    }
+
+    @media screen and (max-width: 400px) {
+      margin-right: 0;
+    }
   }
 
   &__icon-text {
@@ -58,22 +77,84 @@ $max-width: 1280 - 19 * 2 + px;
     color: $font-main-color;
   }
 
+  &__container-button {
+    position: relative;
+    display: block;
+
+    @media screen and (max-width: 721px) {
+      width: 100%;
+      max-width: 230px;
+    }
+  }
+
+  &__open-menu-btn {
+    display: block;
+    position: relative;
+    @include button;
+    border-top: 2px solid $font-main-color;
+    width: 34px;
+    height: 22px;
+    margin-left: auto;
+
+    @media screen and (min-width: 721px) {
+      display: none;
+    }
+
+    &::before {
+      content: '';
+      width: 14px;
+      height: 2px;
+      background-color: $font-main-color;
+      position: absolute;
+      top: 7px;
+      right: 0;
+    }
+
+    &::after {
+      content: '';
+      width: 21px;
+      height: 2px;
+      background-color: $font-main-color;
+      position: absolute;
+      top: 16px;
+      right: 0;
+    }
+  }
+
   &__list {
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
 
-    @media screen and (max-width: 541px) {
+    @media screen and (max-width: 721px) {
+      position: absolute;
+      top: 30px;
+      left: 0;
       display: none;
+      flex-direction: column;
+      background-color: $pang-color;
+      padding: 20px;
+      border-radius: 2px;
     }
   }
 
   &__item {
     margin-right: 20px;
 
+    @media screen and (max-width: 721px) {
+      margin-right: 0;
+      margin-left: auto;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
     &:last-of-type {
       margin-right: 0;
+
+      @media screen and (max-width: 721px) {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -87,29 +168,36 @@ $max-width: 1280 - 19 * 2 + px;
     border: 1px solid $light-gray-blue;
     font-size: 18px;
     line-height: 20px;
+
+    @media screen and (max-width: 721px) {
+      width: 100%;
+    }
   }
 }
 
 .content {
   display: grid;
-  grid-template-columns: minmax(320px, 596px) minmax(320px, 594px);
+  grid-template-columns: minmax(320px, 595px) minmax(320px, 595px);
   column-gap: 90px;
   justify-content: center;
   grid-auto-flow: row;
 
   @media screen and (max-width: 1281px) {
-    column-gap: 40px;
-    grid-template-columns: minmax(320px, 420px) minmax(320px, 594px);
+    column-gap: 30px;
+    grid-template-columns: 1fr minmax(320px, 594px);
+    justify-content: space-between;
   }
 
   @media screen and (max-width: 1025px) {
     column-gap: 0;
     grid-template-columns: minmax(320px, 554px);
+    justify-content: center;
   }
 }
 
 .tests {
   padding-right: 40px;
+  margin-top: 34px;
 
   @media screen and (max-width: 1025px) {
     padding: 0;
@@ -252,7 +340,6 @@ $max-width: 1280 - 19 * 2 + px;
     font-weight: 700;
     color: rgba($font-main-color, $alpha: .8);
     margin-bottom: 10px;
-    margin-left: 15px;
 
     @media screen and (max-width: 432px) {
       font-size: 20px;
