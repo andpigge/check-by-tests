@@ -74,7 +74,7 @@ $max-width: 1280px;
     font-family: 'Marck Script', cursive;
     font-size: 28px;
     line-height: 21px;
-    color: $font-main-color;
+    color: darken($light-gray-blue, 20%);
   }
 
   &__container-button {
@@ -168,6 +168,13 @@ $max-width: 1280px;
     border: 1px solid $light-gray-blue;
     font-size: 18px;
     line-height: 20px;
+    transition: background-color .3s ease-out, color .1s linear;
+    color: darken($light-gray-blue, 20%);
+
+    &:hover {
+      background-color: darken($light-gray-blue, 20%);
+      color: white;
+    }
 
     @media screen and (max-width: 721px) {
       width: 100%;
@@ -242,7 +249,7 @@ $max-width: 1280px;
   }
 
   &__title {
-    @include font-main;
+    font-family: $font-family-main;
     font-size: 24px;
     line-height: 32px;
     font-weight: 700;
@@ -250,6 +257,7 @@ $max-width: 1280px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    color: darken($light-gray-blue, 30%);
 
     @media screen and (max-width: 541px) {
       margin-top: 0;
@@ -267,6 +275,7 @@ $max-width: 1280px;
     font-size: 20px;
     line-height: 22px;
     margin-bottom: 38px;
+    color: darken($light-gray-blue, 20%);
 
     @media screen and (max-width: 541px) {
       font-size: 18px;
@@ -303,8 +312,13 @@ $max-width: 1280px;
     background-image: url(../images/icons/card-test-edit.svg);
     background-size: 15px 15px;
     border-radius: 50%;
-    background-color: $light-gray-blue;
+    background-color: darken($light-gray-blue, 20%);
     border: 1px solid white;
+    transition: background-color .2s ease-out;
+
+    &:hover {
+      background-color: darken($light-gray-blue, 0%);
+    }
   }
 
   &__delete-btn {
@@ -314,7 +328,13 @@ $max-width: 1280px;
     background-image: url(../images/icons/card-test-delete.svg);
     background-size: 15px 15px;
     border-radius: 5px;
-    border: 2px solid #89BBD2;
+    border: 2px solid $light-gray-blue;
+    transition: transform .2s ease-out, border .2s linear;
+
+    &:hover {
+      border: 2px solid transparent;
+      transform: scale(1.2);
+    }
   }
 }
 
@@ -358,7 +378,7 @@ $max-width: 1280px;
     font-weight: 400;
     border-radius: 2px;
     background-color: rgba($pang-color, $alpha: .4);
-    color: rgba($font-main-color, $alpha: .4);
+    color: darken($light-gray-blue, 20%);
 
     @media screen and (max-width: 432px) {
       font-size: 20px;
@@ -382,7 +402,7 @@ $max-width: 1280px;
     height: 125px;
     border: none;
     background-color: rgba($pang-color, $alpha: .4);
-    color: rgba($font-main-color, $alpha: .4);
+    color: darken($light-gray-blue, 20%);
     padding: 10px 15px;
     font-size: 18px;
     line-height: 20px;
@@ -409,9 +429,16 @@ $max-width: 1280px;
     font-weight: 600;
     font-size: 18px;
     color: white;
-    background-color: $light-gray-blue;
+    background-color: darken($light-gray-blue, 20%);
     padding: 0 34px;
     width: 200px;
     cursor: pointer;
+    transition: background-color .3s ease, border .3s ease;
+    border-radius: 2px;
+
+    &:hover {
+      background-color: darken($light-gray-blue, 0%);
+      border: 1px solid white;
+    }
   }
 }
