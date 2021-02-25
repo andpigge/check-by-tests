@@ -19,17 +19,21 @@
       </p>
     </a>
     <!-- /.header__link -->
-    <ul class="header__list">
-      <li class="header__item">
-        <button class="header__button" type="button">Создать тест</button>
-      </li>
-      <!-- /.header__item -->
-      <li class="header__item">
-        <button class="header__button" type="button">Создать вопросы</button>
-      </li>
-      <!-- /.header__item -->
-    </ul>
-    <!-- /.header__list -->
+    <div class="header__container-button">
+      <button class="header__open-menu-btn" type="button"></button>
+      <ul class="header__list">
+        <li class="header__item">
+          <button class="header__button" type="button">Создать тест</button>
+        </li>
+        <!-- /.header__item -->
+        <li class="header__item">
+          <button class="header__button" type="button">Создать вопросы</button>
+        </li>
+        <!-- /.header__item -->
+      </ul>
+      <!-- /.header__list -->
+    </div>
+    <!-- /.header__container-button -->
   </header>
   <!-- /.header -->
   <main class="content">
@@ -47,6 +51,32 @@
     <!-- /.create-test -->
     <section class="tests">
       <ul class="tests__list">
+        <li class="tests__item">
+          <div class="card-test">
+            <div class="card-test__container-text">
+              <h2 class="card-test__title">
+                Название теста
+              </h2>
+              <p class="card-test__desc">
+                Напишите описание текста
+              </p>
+            </div>
+            <!-- /.card-test__container-text -->
+            <ul class="card-test__list">
+              <li class="card-test__item">
+                <button class="card-test__edit-btn"></button>
+              </li>
+              <!-- /.card-test__item -->
+              <li class="card-test__item">
+                <button class="card-test__delete-btn"></button>
+              </li>
+              <!-- /.card-test__item -->
+            </ul>
+            <!-- /.card-test__list -->
+          </div>
+          <!-- /.card-test -->
+        </li>
+        <!-- /.tests__item -->
         <li class="tests__item">
           <div class="card-test">
             <div class="card-test__container-text">
