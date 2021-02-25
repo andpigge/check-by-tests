@@ -136,6 +136,10 @@ $max-width: 1280px;
       background-color: $pang-color;
       padding: 20px;
       border-radius: 2px;
+
+      &_active {
+        display: flex;
+      }
     }
   }
 
@@ -204,7 +208,7 @@ $max-width: 1280px;
 
 .tests {
   padding-right: 40px;
-  margin-top: 34px;
+  padding-top: 34px;
 
   @media screen and (max-width: 1025px) {
     padding: 0;
@@ -214,6 +218,27 @@ $max-width: 1280px;
     list-style: none;
     padding: 0;
     margin: 0;
+  }
+
+  &__notification {
+    display: none;
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 700;
+    color: $font-main-color;
+    background-color: rgba($pang-color, $alpha: .4);
+    width: 100%;
+    max-width: 555px;
+    min-height: 189px;
+    border-radius: 2px;
+
+    &_active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   &__item {

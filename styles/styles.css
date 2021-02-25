@@ -111,6 +111,9 @@
     padding: 20px;
     border-radius: 2px;
   }
+  .header__list_active {
+    display: flex;
+  }
 }
 .header__item {
   margin-right: 20px;
@@ -181,7 +184,7 @@
 
 .tests {
   padding-right: 40px;
-  margin-top: 34px;
+  padding-top: 34px;
 }
 @media screen and (max-width: 1025px) {
   .tests {
@@ -192,6 +195,25 @@
   list-style: none;
   padding: 0;
   margin: 0;
+}
+.tests__notification {
+  display: none;
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #032D3D;
+  background-color: rgba(201, 230, 244, 0.4);
+  width: 100%;
+  max-width: 555px;
+  min-height: 189px;
+  border-radius: 2px;
+}
+.tests__notification_active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .tests__item {
   margin-bottom: 20px;
