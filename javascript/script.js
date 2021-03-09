@@ -48,43 +48,56 @@ const openMenu = header.querySelector('.header__open-menu-btn');
 /* Меню */
 const menuButton = header.querySelector('.header__list');
 
-/* Проверяет на наличие тестов на странице */
-/* existTests(); */
-
 /* Сбрасывает форму */
-function clearForm() {
-  inputName.value = '';
-  inputDesc.value = '';
+function clearForm(...inputs) {
+  inputs.forEach(input => {
+    input.value = '';
+  });
 }
 
 /* Создание теста */
-function formSubmitHandler(event) {
+function createTestHandler(event) {
   event.preventDefault();
 
   const inputNameValue = inputName.value;
   const inputDescValue = inputDesc.value;
 
-  if (inputNameValue.length < 4 || inputDescValue.length < 8) {
-    return;
-  }
+  /* Создал обьект с карточкой */
+  const objCard = {name: inputNameValue, link: inputDescValue};
+  initialTests.push(objCard)
 
-  clearForm();
+  const testNode = createTestNode(inputName.value, inputDesc.value);
 
-  /* existTests(); */
+  /* Добавляет события */
+  addEventsTestNode(testNode);
+
+  testsList.prepend(testNode);
+
+  existTests();
+
+  clearForm(inputName, inputDesc);
 }
 
-addEventListener('submit', formSubmitHandler);
+saveTest.addEventListener('click', createTestHandler);
+
+/* Функция при пустом массиве показывает что тестом нет */
+function emptyArrClassAdd() {
+  if (initialTests.length === 0) {
+    testsNotification.classList.add('tests__notification_active');
+  }
+}
+
+emptyArrClassAdd();
 
 /* Проверяет на наличие созданных тестов */
-/* function existTests() {
-  const TestsList = testsList.querySelectorAll('.tests__item');
-
-  if (TestsList.length === 0) {
+function existTests() {
+  if (testsList.children.length === 1) {
     testsNotification.classList.add('tests__notification_active');
-  } else {
+  }
+  else {
     testsNotification.classList.remove('tests__notification_active');
   }
-} */
+}
 
 /* Открыть закрыть меню */
 function toggleMenuModule() {
@@ -106,6 +119,12 @@ function disabledForm() {
   }
 }
 
+/* Удаление теста карточки */
+function deleteTest(event) {
+  event.target.closest('.tests__item').remove();
+  existTests()
+}
+
 /* Сохряняет данные из формы попапа, в карточку которая редактируется */
 function editTest(btnEdit) {
   btnEdit.closest('.card-test').querySelector('.card-test__title').textContent = inputNameTest.value;
@@ -114,7 +133,8 @@ function editTest(btnEdit) {
 
 /* Обработчик формы редактирования теста */
 function formSubmitHandlerEditTest(btnEdit, event) {
-  console.log(btnEdit)
+  event.preventDefault();
+
   editTest(btnEdit);
 
   closeAllPopups(event);
@@ -128,6 +148,22 @@ function editInputValue(event) {
   inputDescTest.value = cardNode.querySelector('.card-test__desc').textContent;
 }
 
+/* Добавляет собятия для карточки. Редактирования теста. Принимает в параметры DOM узел на который будет вешаться событие */
+function addEventsTestNode(itemNode) {
+  itemNode.querySelector('.card-test__edit-btn').addEventListener('click', function(event) {
+
+    openPopupEditTest();
+    editInputValue(event);
+
+    const btnEdit = event.target;
+    popupEditTest.addEventListener('submit', (event) => formSubmitHandlerEditTest(btnEdit, event), {
+      once: true,
+    });
+  });
+
+  itemNode.querySelector('.card-test__delete-btn').addEventListener('click', deleteTest);
+}
+
 showTests();
 
 /* Выводит начальные тесты из массива, и вешает события */
@@ -135,14 +171,8 @@ function showTests() {
   initialTests.forEach(test => {
     const testCard = createTestNode(test.name, test.desc);
 
-    testCard.querySelector('.card-test__edit-btn').addEventListener('click', function(event) {
-      openPopupEditTest();
-      editInputValue(event);
-
-      const btnEdit = event.target;
-      console.log(btnEdit)
-      popupEditTest.addEventListener('submit', (event) => formSubmitHandlerEditTest(btnEdit, event));
-    });
+    /* Добавляет события */
+    addEventsTestNode(testCard);
 
     testsList.append(testCard);
   });

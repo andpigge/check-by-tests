@@ -421,6 +421,12 @@ $max-width: 1280px;
     }
   }
 
+  &__special-text {
+    color: lighten($color: red, $amount: 20%);
+    font-size: 18px;
+    line-height: 22px;
+  }
+
   &__input-textarea {
     box-sizing: border-box;
     resize: none;

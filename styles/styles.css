@@ -397,6 +397,11 @@
   color: rgba(3, 45, 61, 0.3);
   font-weight: 600;
 }
+.create-test__special-text {
+  color: #ff6666;
+  font-size: 18px;
+  line-height: 22px;
+}
 .create-test__input-textarea {
   box-sizing: border-box;
   resize: none;
