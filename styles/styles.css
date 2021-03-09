@@ -439,4 +439,111 @@
   border: 1px solid white;
 }
 
+.footer {
+  display: block;
+}
+
+.popup {
+  visibility: hidden;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(68, 143, 177, 0.5);
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s ease;
+}
+.popup_opened {
+  visibility: visible;
+  opacity: 1;
+}
+.popup__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 100%;
+  max-width: 400px;
+  background-color: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+}
+.popup__close-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: -35px;
+  right: -35px;
+  background-image: url(../images/icons/Union4674.svg);
+  background-size: 32px 32px;
+  width: 40px;
+  height: 40px;
+}
+.popup__form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 40px;
+}
+.popup__title {
+  font-family: Playfair Display;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #032D3D;
+  margin: 0;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  text-align: center;
+}
+.popup__input-text {
+  box-sizing: border-box;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #448FB1;
+  margin-bottom: 46px;
+  width: 100%;
+  max-width: 320px;
+  min-height: 34px;
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.popup__input-textarea {
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 1px solid #448FB1;
+  margin-bottom: 20px;
+  resize: none;
+  width: 100%;
+  max-width: 320px;
+  min-height: 98px;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 400;
+  padding: 8px;
+  border-radius: 2px;
+}
+.popup__edit-sb {
+  height: 48px;
+  border: 1px solid #C9E6F4;
+  border-radius: 2px;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: white;
+  background-color: #448fb1;
+  padding: 0 34px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border 0.3s ease;
+  margin-bottom: 30px;
+}
+
 /*# sourceMappingURL=styles.css.map */

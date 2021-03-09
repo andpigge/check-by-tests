@@ -40,8 +40,8 @@
     <section class="create-test">
       <form class="create-test__form" name="create-test" method="POST">
         <h2 class="create-test__form-title">Заполните тест</h2>
-        <input type="text" class="create-test__input-text" name="test__title" placeholder="Название теста...">
-        <textarea class="create-test__input-textarea" name="test__desc" placeholder="Опишите свой тест..."></textarea>
+        <input type="text" class="create-test__input-text" name="test-title-add" placeholder="Название теста...">
+        <textarea class="create-test__input-textarea" name="test-desc-add" placeholder="Опишите свой тест..."></textarea>
         <button type="submit" class="create-test__save-sb">
           Создать
         </button>
@@ -51,13 +51,51 @@
     <!-- /.create-test -->
     <section class="tests">
       <ul class="tests__list">
-        <p class="tests__notification">Тесты отсуствуют...</p>
+        <!-- <p class="tests__notification">Тесты отсуствуют...</p> -->
       </ul>
       <!-- /.tests__list -->
     </section>
     <!-- /.tests -->
   </main>
   <!-- /.content -->
+  <footer class="footer"></footer>
+  <div class="popup popup_edit_tests">
+    <div class="popup__container">
+      <button class="popup__close-btn" type="button"></button>
+      <form class="popup__form" name="edit-test">
+        <h2 class="popup__title">
+          Редактировать тест
+        </h2>
+        <input class="popup__input-text" type="text" name="title-test-edit">
+        <textarea class="popup__input-textarea" name="title-test-desc"></textarea>
+        <button type="submit" class="popup__edit-sb">
+          Сохранить
+        </button>
+      </form>
+      <!-- /.popup__form -->
+    </div>
+    <!-- /.popup__container -->
+  </div>
+  <!-- /.popup -->
+
+  <template class="tests-list-container">
+    <li class="tests__item">
+      <div class="card-test">
+        <div class="card-test__container-text">
+          <h2 class="card-test__title"></h2>
+          <p class="card-test__desc"></p>
+        </div>
+        <ul class="card-test__list">
+          <li class="card-test__item">
+            <button class="card-test__edit-btn"></button>
+          </li>
+          <li class="card-test__item">
+            <button class="card-test__delete-btn"></button>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </template>
 
 <script src="./javascript/script.js"></script>
 </body>
